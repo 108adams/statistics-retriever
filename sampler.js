@@ -37,7 +37,7 @@ const getAsArray = processes => Object
     .entries(processes)
     .map(entry => entry[1]);
 
-const statistics = chrome.processes.onUpdated.addListener(processes => {
+const statistics = chrome.processes.onUpdatedWithMemory.addListener(processes => {
     if (processes) {
         getAsArray(processes)
             .map(process => createDto(process))
