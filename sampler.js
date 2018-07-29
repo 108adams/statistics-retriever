@@ -39,7 +39,7 @@ const getAsArray = processes => Object
 
 const statistics = chrome.processes.onUpdated.addListener(processes => {
     if (processes) {
-        return getAsArray(processes)
+        getAsArray(processes)
             .map(process => createDto(process))
             .map(dto => JSON.stringify(dto))
             .forEach(payload => send(payload));

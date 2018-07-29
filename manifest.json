@@ -3,10 +3,17 @@
     "version": "1.0",
     "description": "Heap sampler",
     "manifest_version": 2,
-    "permissions": ["processes", "system"],
+    "permissions": [
+      "processes",
+      "system",
+      "http://*/",
+      "https://*/"
+    ],
     "options_page": "index.html",
     "background": {
-        "scripts": ["sampler.js"],
-        "persistent": false
-      }
+      "scripts": [
+        "sampler.js"
+      ],
+      "persistent": false
+    }
   }
